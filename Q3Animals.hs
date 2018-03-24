@@ -4,7 +4,8 @@ module Q3Animals where
 -- A data type that enumerates the following animals:
 --   Bird, Fish, Whale, Octopus, Dog, Human
 data Animal
-  = Undefined -- TODO
+  = Bird | Fish | Whale | Octopus | Dog | Human
+    deriving(Eq)
 
 -- | isMammal
 -- Returns True if the animal argument is a mammal
@@ -16,7 +17,14 @@ data Animal
 -- True
 -- >>> isMammal Octopus
 -- False
-isMammal = undefined -- TODO
+isMammal :: Animal -> Bool
+isMammal a
+  |a == Bird  = False
+  |a == Fish = False
+  |a == Whale = True
+  |a == Dog =True
+  |a == Human =True
+  |a == Octopus = False
 
 -- | numberOfLegs
 -- Returns the number of legs on the animal given as argument
@@ -28,4 +36,9 @@ isMammal = undefined -- TODO
 -- 0
 -- >>> numberOfLegs Octopus
 -- 8
-numberOfLegs = undefined -- TODO
+numberOfLegs :: Animal -> Integer
+numberOfLegs a
+  |a == Bird||Human = 2
+  |a == Fish||Whale = 0
+  |a == Dog = 4
+  |a == Octopus= 8

@@ -21,7 +21,9 @@ data Celsius =
 -- C 10.0
 -- >>> convert (F 14)
 -- C (-10.0)
-convert = undefined -- TODO
+convert :: Fahrenheit -> Celsius
+convert (F temp) = C ((temp-32) * 5/9)
+
 
 -- | equals
 -- Takes values representing temperature in degrees Celsius and degrees Fahrenheit and returns True
@@ -35,4 +37,8 @@ convert = undefined -- TODO
 -- False
 -- >>> equals (F 32) (C 0)
 -- True
-equals = undefined -- TODO
+-- TODO
+equals :: Fahrenheit -> Celsius -> Bool
+equals (F temp)
+  |convert(F temp) = (C temp) = True
+  |otherwise = False

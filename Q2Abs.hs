@@ -14,4 +14,7 @@ import Prelude hiding (abs)
 -- 0
 -- >>> abs (-5)
 -- 5
-abs = undefined -- TODO
+abs :: Integer -> Integer
+abs x
+  | x >  0 = x
+  | x <= 0 = -x
