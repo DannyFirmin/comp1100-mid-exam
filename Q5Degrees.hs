@@ -37,8 +37,11 @@ convert (F temp) = C ((temp-32) * 5/9)
 -- False
 -- >>> equals (F 32) (C 0)
 -- True
--- TODO
 equals :: Fahrenheit -> Celsius -> Bool
-equals (F temp)
-  |convert(F temp) = (C temp) = True
-  |otherwise = False
+-- equals f (C a) =
+--     case convert f of
+--     (C b) -> a == b
+equals (F n) (C a) =
+  case convert (F n) of
+  (C b) -> abs (a-b) <= 0.5
+--equals (F temp) (C temp2) = (convert (F temp)) == (C temp2)
