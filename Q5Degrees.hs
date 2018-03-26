@@ -41,7 +41,12 @@ equals :: Fahrenheit -> Celsius -> Bool
 -- equals f (C a) =
 --     case convert f of
 --     (C b) -> a == b
-equals (F n) (C a) =
-  case convert (F n) of
-  (C b) -> abs (a-b) <= 0.5
+-- equals (F n) (C a) =
+--   case convert (F n) of
+--   (C b) -> abs (a-b) <= 0.5
 --equals (F temp) (C temp2) = (convert (F temp)) == (C temp2)
+convert (F n) = (C b)
+
+equals convert (F n)
+  |abs(a-n)<=0.5 = True
+  |otherwise = False

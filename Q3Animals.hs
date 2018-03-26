@@ -39,6 +39,6 @@ isMammal a
 numberOfLegs :: Animal -> Integer
 numberOfLegs a
   |a == Bird||Human = 2
-  |a == Fish||Whale = 0
+  |a == Fish || Whale = 0
   |a == Dog = 4
   |a == Octopus= 8
